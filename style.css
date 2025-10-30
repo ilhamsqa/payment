@@ -1,0 +1,219 @@
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366F1, #3B82F6);
+            --secondary-gradient: linear-gradient(135deg, #10B981, #34D399);
+            --dark-bg: #0A0A0F;
+            --card-bg: #15151F;
+            --card-border: #2A2A3A;
+            --text-primary: #F0F0F0;
+            --text-secondary: #A0A0B0;
+            --accent-indigo: #6366F1;
+            --accent-teal: #14B8A6;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: var(--text-primary);
+        }
+        
+        .cyberpunk-border {
+            border: 1px solid var(--card-border);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        }
+        
+        .grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(40, 40, 60, 0.2) 25%, rgba(40, 40, 60, 0.2) 26%, transparent 27%, transparent 74%, rgba(40, 40, 60, 0.2) 75%, rgba(40, 40, 60, 0.2) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(40, 40, 60, 0.2) 25%, rgba(40, 40, 60, 0.2) 26%, transparent 27%, transparent 74%, rgba(40, 40, 60, 0.2) 75%, rgba(40, 40, 60, 0.2) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+        
+        .header, .footer {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(40, 40, 60, 0.3);
+        }
+        
+        .footer {
+            border-top: 1px solid rgba(40, 40, 60, 0.3);
+            border-bottom: none;
+        }
+        
+        .logo-text {
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        
+        .payment-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-option {
+            background: rgba(30, 30, 45, 0.6);
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        
+        .payment-option:hover, .payment-option.selected {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: var(--accent-indigo);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+        }
+        
+        .payment-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 0 auto 8px;
+            font-size: 24px;
+        }
+        
+        .qris-icon {
+            background: linear-gradient(135deg, #3B82F6, #6366F1);
+        }
+        
+        .dana-icon {
+            background: linear-gradient(135deg, #F59E0B, #EF4444);
+        }
+        
+        .gopay-icon {
+            background: linear-gradient(135deg, #00AA5B, #00D374);
+        }
+        
+        input {
+            background: rgba(25, 25, 35, 0.7);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--accent-indigo);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-teal));
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        
+        .security-text {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .security-text::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-indigo), var(--accent-teal), transparent);
+        }
+        
+        /* Animasi subtle untuk latar belakang */
+        @keyframes subtleShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 15% 50%, rgba(39, 51, 89, 0.4), transparent 25%),
+                       radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.2), transparent 25%);
+            background-size: 200% 200%;
+            animation: subtleShift 15s ease infinite;
+            z-index: -2;
+            pointer-events: none;
+        }
+        
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        .floating-element-1 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+            top: 10%;
+            left: 5%;
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .floating-element-2 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.2) 0%, transparent 70%);
+            bottom: 20%;
+            right: 10%;
+            animation: float 12s ease-in-out infinite reverse;
+        }
+        
+        .floating-element-3 {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+            top: 40%;
+            right: 20%;
+            animation: float 10s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, 20px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 12px;
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .info-card {
+            background: rgba(30, 30, 45, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
